@@ -23,6 +23,7 @@
 		5A941D9F1F0170AF0045DCE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A941D9E1F0170AF0045DCE4 /* GoogleService-Info.plist */; };
 		5A941DA61F0175940045DCE4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A941DA51F0175940045DCE4 /* Login.storyboard */; };
 		5A941DA81F0175F60045DCE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A941DA71F0175F60045DCE4 /* LoginViewController.swift */; };
+		5A9DE2E21F06D82A005789A8 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9DE2E11F06D82A005789A8 /* PostHeaderCell.swift */; };
 		5AA6CF231F0411D8001F5FF2 /* ICPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6CF221F0411D8001F5FF2 /* ICPhotoHelper.swift */; };
 		5AEB3EEC1F02DD6600BD19D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB3EEB1F02DD6600BD19D6 /* Constants.swift */; };
 		5AEB3EEF1F02DE0900BD19D6 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB3EEE1F02DE0900BD19D6 /* Storyboard+Utility.swift */; };
@@ -54,6 +55,7 @@
 		5A941DA01F0170B90045DCE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Supporting/Info.plist; sourceTree = "<group>"; };
 		5A941DA51F0175940045DCE4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Storyboards/Login.storyboard; sourceTree = "<group>"; };
 		5A941DA71F0175F60045DCE4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		5A9DE2E11F06D82A005789A8 /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
 		5AA6CF221F0411D8001F5FF2 /* ICPhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICPhotoHelper.swift; path = Helpers/ICPhotoHelper.swift; sourceTree = "<group>"; };
 		5AEB3EEB1F02DD6600BD19D6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Supporting/Constants.swift; sourceTree = "<group>"; };
 		5AEB3EEE1F02DE0900BD19D6 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5A2D9E2E1F05B33F00E47379 /* PostImageCell.swift */,
+				5A9DE2E11F06D82A005789A8 /* PostHeaderCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				5AEB3EEC1F02DD6600BD19D6 /* Constants.swift in Sources */,
 				5A5E021C1F05714F00B62DA2 /* PostService.swift in Sources */,
 				5A202C8D1F01B59D003B11B9 /* CreateUsernameViewController.swift in Sources */,
+				5A9DE2E21F06D82A005789A8 /* PostHeaderCell.swift in Sources */,
 				5A941D871F016AF60045DCE4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

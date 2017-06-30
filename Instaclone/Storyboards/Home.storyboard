@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,32 +26,70 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostImageCell" rowHeight="375" id="Mnh-6Z-Ji6" customClass="PostImageCell" customModule="Instaclone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="375"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="54" id="lvx-YN-7Fh" customClass="PostHeaderCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mnh-6Z-Ji6" id="b7d-Zp-RUU">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lvx-YN-7Fh" id="FXY-WJ-9rC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPE-VI-dya">
+                                                    <rect key="frame" x="323" y="5" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="1eb-SP-oMe"/>
+                                                        <constraint firstAttribute="width" constant="44" id="dgs-ux-aXl"/>
+                                                    </constraints>
+                                                    <state key="normal" image="btn_options_black"/>
+                                                    <connections>
+                                                        <action selector="optionButtonTapped:" destination="lvx-YN-7Fh" eventType="touchUpInside" id="LTi-B9-zaA"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wr2-T0-Uui">
+                                                    <rect key="frame" x="15" y="0.0" width="76" height="53.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Wr2-T0-Uui" firstAttribute="leading" secondItem="FXY-WJ-9rC" secondAttribute="leading" constant="15" id="6LI-38-Af8"/>
+                                                <constraint firstItem="Wr2-T0-Uui" firstAttribute="top" secondItem="FXY-WJ-9rC" secondAttribute="top" id="JEZ-fX-R82"/>
+                                                <constraint firstItem="WPE-VI-dya" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wr2-T0-Uui" secondAttribute="trailing" constant="15" id="YM1-l5-VqG"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wr2-T0-Uui" secondAttribute="bottom" id="cGQ-Gs-VGc"/>
+                                                <constraint firstItem="WPE-VI-dya" firstAttribute="trailing" secondItem="FXY-WJ-9rC" secondAttribute="trailingMargin" id="jaC-oI-6kh"/>
+                                                <constraint firstItem="WPE-VI-dya" firstAttribute="centerY" secondItem="FXY-WJ-9rC" secondAttribute="centerY" id="sKN-un-m0c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="usernameLabel" destination="Wr2-T0-Uui" id="MaG-J0-dRK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostImageCell" rowHeight="375" id="KRy-y1-7YX" userLabel="Cell" customClass="PostImageCell" customModule="Instaclone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="82" width="375" height="375"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KRy-y1-7YX" id="Cdq-Tf-Urw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NOP-Wf-48z">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="czF-Dn-lRi" userLabel="Post Image View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="NOP-Wf-48z" secondAttribute="bottom" id="39Y-pb-if3"/>
-                                                <constraint firstAttribute="trailing" secondItem="NOP-Wf-48z" secondAttribute="trailing" id="7tT-w0-kyv"/>
-                                                <constraint firstItem="NOP-Wf-48z" firstAttribute="leading" secondItem="b7d-Zp-RUU" secondAttribute="leading" id="fw3-ES-fVH"/>
-                                                <constraint firstItem="NOP-Wf-48z" firstAttribute="top" secondItem="b7d-Zp-RUU" secondAttribute="top" id="o42-iX-WqL"/>
+                                                <constraint firstItem="czF-Dn-lRi" firstAttribute="leading" secondItem="Cdq-Tf-Urw" secondAttribute="leading" id="NK1-hL-lLg"/>
+                                                <constraint firstAttribute="bottom" secondItem="czF-Dn-lRi" secondAttribute="bottom" id="dQ0-HR-JPt"/>
+                                                <constraint firstAttribute="trailing" secondItem="czF-Dn-lRi" secondAttribute="trailing" id="j2z-lZ-r2s"/>
+                                                <constraint firstItem="czF-Dn-lRi" firstAttribute="top" secondItem="Cdq-Tf-Urw" secondAttribute="top" id="tno-NN-0bD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="postImageView" destination="b7d-Zp-RUU" id="YsY-B7-xAG"/>
+                                            <outlet property="postImageView" destination="czF-Dn-lRi" id="0dz-gf-lgO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="atm-en-lFI" id="EwH-sz-Gxw"/>
-                                    <outlet property="delegate" destination="atm-en-lFI" id="cKR-hM-opP"/>
+                                    <outlet property="dataSource" destination="atm-en-lFI" id="UXH-vi-HlG"/>
+                                    <outlet property="delegate" destination="atm-en-lFI" id="J4E-bR-BhT"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -64,7 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mgh-Vf-Xie"/>
                     <connections>
-                        <outlet property="tableView" destination="7M7-8d-5YT" id="UPd-BX-2YQ"/>
+                        <outlet property="tableView" destination="7M7-8d-5YT" id="ZUX-Dy-6mc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2X-Dp-caz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,6 +134,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_options_black" width="24" height="24"/>
         <image name="tab_home_black" width="25" height="25"/>
     </resources>
 </document>

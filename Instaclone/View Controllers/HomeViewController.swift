@@ -25,10 +25,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        configureTableView()
+        
         UserService.posts(for: User.current) { (posts) in
             self.posts = posts
             self.tableView.reloadData()
         }
+    }
+    
+    // MARK: - AESTHETIC
+    
+    func configureTableView() {
+        // remove separators for empty cells
+         tableView.tableFooterView = UIView()
+        // remove separators from cells
+         tableView.separatorStyle = .none
     }
 
 }
@@ -46,8 +57,8 @@ extension HomeViewController : UITableViewDataSource {
         
         let post = posts[indexPath.row]
         let imageURL = URL(string: post.imageURL)
-//        cell.postImageView.kf.setImage(with: imageURL)
-        
+        let imageView : UIImageView = cell.postImageView
+        imageView.kf.setImage(with: imageURL)
         return cell
     }
 }
