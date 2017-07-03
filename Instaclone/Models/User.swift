@@ -16,6 +16,8 @@ class User : NSObject {
     
     let uid: String
     let username: String
+    var isFollowed = false
+
     
     // MARK: - Init
     

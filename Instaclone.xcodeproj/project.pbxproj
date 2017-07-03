@@ -17,6 +17,9 @@
 		5A5E021A1F056E1D00B62DA2 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E02191F056E1D00B62DA2 /* StorageService.swift */; };
 		5A5E021C1F05714F00B62DA2 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E021B1F05714F00B62DA2 /* PostService.swift */; };
 		5A5E021E1F057B6500B62DA2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5E021D1F057B6500B62DA2 /* Post.swift */; };
+		5A6940371F0A95D600634916 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6940361F0A95D600634916 /* FollowService.swift */; };
+		5A6940391F0AA0AE00634916 /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A6940381F0AA0AE00634916 /* FindFriends.storyboard */; };
+		5A69403B1F0AA8C200634916 /* FindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A69403A1F0AA8C200634916 /* FindFriendsCell.swift */; };
 		5A941D871F016AF60045DCE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A941D861F016AF60045DCE4 /* AppDelegate.swift */; };
 		5A941D8E1F016AF60045DCE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A941D8D1F016AF60045DCE4 /* Assets.xcassets */; };
 		5A941D9D1F0170A50045DCE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A941D9C1F0170A50045DCE4 /* Main.storyboard */; };
@@ -25,6 +28,7 @@
 		5A941DA81F0175F60045DCE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A941DA71F0175F60045DCE4 /* LoginViewController.swift */; };
 		5A9DE2E21F06D82A005789A8 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9DE2E11F06D82A005789A8 /* PostHeaderCell.swift */; };
 		5A9DE2E41F06E559005789A8 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9DE2E31F06E559005789A8 /* PostActionCell.swift */; };
+		5AA574ED1F09F909000110B5 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA574EC1F09F909000110B5 /* LikeService.swift */; };
 		5AA6CF231F0411D8001F5FF2 /* ICPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6CF221F0411D8001F5FF2 /* ICPhotoHelper.swift */; };
 		5AEB3EEC1F02DD6600BD19D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB3EEB1F02DD6600BD19D6 /* Constants.swift */; };
 		5AEB3EEF1F02DE0900BD19D6 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEB3EEE1F02DE0900BD19D6 /* Storyboard+Utility.swift */; };
@@ -48,6 +52,9 @@
 		5A5E02191F056E1D00B62DA2 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageService.swift; path = Services/StorageService.swift; sourceTree = "<group>"; };
 		5A5E021B1F05714F00B62DA2 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostService.swift; path = Services/PostService.swift; sourceTree = "<group>"; };
 		5A5E021D1F057B6500B62DA2 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
+		5A6940361F0A95D600634916 /* FollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowService.swift; path = Services/FollowService.swift; sourceTree = "<group>"; };
+		5A6940381F0AA0AE00634916 /* FindFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FindFriends.storyboard; path = Storyboards/FindFriends.storyboard; sourceTree = "<group>"; };
+		5A69403A1F0AA8C200634916 /* FindFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindFriendsCell.swift; path = Views/FindFriendsCell.swift; sourceTree = "<group>"; };
 		5A941D831F016AF60045DCE4 /* Instaclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instaclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A941D861F016AF60045DCE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A941D8D1F016AF60045DCE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 		5A941DA71F0175F60045DCE4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		5A9DE2E11F06D82A005789A8 /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostHeaderCell.swift; path = Views/PostHeaderCell.swift; sourceTree = "<group>"; };
 		5A9DE2E31F06E559005789A8 /* PostActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostActionCell.swift; path = Views/PostActionCell.swift; sourceTree = "<group>"; };
+		5AA574EC1F09F909000110B5 /* LikeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikeService.swift; path = Services/LikeService.swift; sourceTree = "<group>"; };
 		5AA6CF221F0411D8001F5FF2 /* ICPhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ICPhotoHelper.swift; path = Helpers/ICPhotoHelper.swift; sourceTree = "<group>"; };
 		5AEB3EEB1F02DD6600BD19D6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Supporting/Constants.swift; sourceTree = "<group>"; };
 		5AEB3EEE1F02DE0900BD19D6 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Storyboard+Utility.swift"; path = "Extensions/Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -109,6 +117,8 @@
 				5A5E02191F056E1D00B62DA2 /* StorageService.swift */,
 				5A202C8F1F01C489003B11B9 /* UserService.swift */,
 				5A5E021B1F05714F00B62DA2 /* PostService.swift */,
+				5AA574EC1F09F909000110B5 /* LikeService.swift */,
+				5A6940361F0A95D600634916 /* FollowService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -119,6 +129,7 @@
 				5A2D9E2E1F05B33F00E47379 /* PostImageCell.swift */,
 				5A9DE2E11F06D82A005789A8 /* PostHeaderCell.swift */,
 				5A9DE2E31F06E559005789A8 /* PostActionCell.swift */,
+				5A69403A1F0AA8C200634916 /* FindFriendsCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -162,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5A941D9C1F0170A50045DCE4 /* Main.storyboard */,
+				5A6940381F0AA0AE00634916 /* FindFriends.storyboard */,
 				5A2D9E2B1F05A36B00E47379 /* Home.storyboard */,
 				5A941DA51F0175940045DCE4 /* Login.storyboard */,
 			);
@@ -285,6 +297,7 @@
 				5A941D9F1F0170AF0045DCE4 /* GoogleService-Info.plist in Resources */,
 				5A941D8E1F016AF60045DCE4 /* Assets.xcassets in Resources */,
 				5A941DA61F0175940045DCE4 /* Login.storyboard in Resources */,
+				5A6940391F0AA0AE00634916 /* FindFriends.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,14 +356,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A6940371F0A95D600634916 /* FollowService.swift in Sources */,
 				5A202C881F01A90F003B11B9 /* User.swift in Sources */,
 				5A5E021A1F056E1D00B62DA2 /* StorageService.swift in Sources */,
 				5AA6CF231F0411D8001F5FF2 /* ICPhotoHelper.swift in Sources */,
 				5A941DA81F0175F60045DCE4 /* LoginViewController.swift in Sources */,
 				5A202C901F01C489003B11B9 /* UserService.swift in Sources */,
 				5A9DE2E41F06E559005789A8 /* PostActionCell.swift in Sources */,
+				5AA574ED1F09F909000110B5 /* LikeService.swift in Sources */,
 				5A5E021E1F057B6500B62DA2 /* Post.swift in Sources */,
 				5A2D9E2F1F05B33F00E47379 /* PostImageCell.swift in Sources */,
+				5A69403B1F0AA8C200634916 /* FindFriendsCell.swift in Sources */,
 				5A2D9E281F059BCA00E47379 /* UIImage+Size.swift in Sources */,
 				5AEB3EF51F0310FA00BD19D6 /* MainTabBarController.swift in Sources */,
 				5AEB3EF11F02F9A100BD19D6 /* HomeViewController.swift in Sources */,

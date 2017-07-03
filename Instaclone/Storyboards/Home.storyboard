@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Instaclone-->
         <scene sceneID="cH6-p4-TU1">
             <objects>
                 <viewController id="atm-en-lFI" customClass="HomeViewController" customModule="Instaclone" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,17 +95,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwS-ja-BIS">
-                                                    <rect key="frame" x="2" y="0.0" width="24" height="45.5"/>
+                                                    <rect key="frame" x="2" y="0.0" width="45.5" height="45.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="nwS-ja-BIS" secondAttribute="height" multiplier="8:15" id="KsE-2Z-i1Q"/>
+                                                        <constraint firstAttribute="width" secondItem="nwS-ja-BIS" secondAttribute="height" multiplier="1:1" id="KsE-2Z-i1Q"/>
                                                     </constraints>
                                                     <state key="normal" image="btn_heart_black_outline"/>
+                                                    <state key="selected" image="btn_heart_red_solid"/>
                                                     <connections>
                                                         <action selector="likeButtonTapped:" destination="MjQ-wy-Rv7" eventType="touchUpInside" id="Qav-Uq-Gr5"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAo-yb-Ze8">
-                                                    <rect key="frame" x="34" y="0.0" width="47.5" height="45.5"/>
+                                                    <rect key="frame" x="47.5" y="0.0" width="47.5" height="45.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -131,7 +132,7 @@
                                                 <constraint firstItem="iAo-yb-Ze8" firstAttribute="top" secondItem="q8V-4s-FdI" secondAttribute="top" id="CTl-yg-NxH"/>
                                                 <constraint firstAttribute="trailing" secondItem="jdf-P1-FZC" secondAttribute="trailing" constant="15" id="GwR-ex-sge"/>
                                                 <constraint firstAttribute="bottom" secondItem="nwS-ja-BIS" secondAttribute="bottom" id="XSq-eA-oTw"/>
-                                                <constraint firstItem="iAo-yb-Ze8" firstAttribute="leading" secondItem="nwS-ja-BIS" secondAttribute="trailing" constant="8" symbolic="YES" id="g0n-te-Ope"/>
+                                                <constraint firstItem="iAo-yb-Ze8" firstAttribute="leading" secondItem="nwS-ja-BIS" secondAttribute="trailing" id="g0n-te-Ope"/>
                                                 <constraint firstAttribute="bottom" secondItem="jdf-P1-FZC" secondAttribute="bottom" id="hfX-1j-TzU"/>
                                                 <constraint firstItem="nwS-ja-BIS" firstAttribute="leading" secondItem="q8V-4s-FdI" secondAttribute="leading" constant="2" id="uga-JJ-Bpi"/>
                                                 <constraint firstAttribute="bottom" secondItem="Yh2-Ny-O5E" secondAttribute="bottom" id="x51-Ix-urg"/>
@@ -160,7 +161,7 @@
                             <constraint firstAttribute="trailing" secondItem="7M7-8d-5YT" secondAttribute="trailing" id="zPd-X0-Zzd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mgh-Vf-Xie"/>
+                    <navigationItem key="navigationItem" title="Instaclone" id="mgh-Vf-Xie"/>
                     <connections>
                         <outlet property="tableView" destination="7M7-8d-5YT" id="25W-4y-big"/>
                     </connections>
@@ -194,6 +195,7 @@
     </scenes>
     <resources>
         <image name="btn_heart_black_outline" width="24" height="24"/>
+        <image name="btn_heart_red_solid" width="24" height="24"/>
         <image name="btn_options_black" width="24" height="24"/>
         <image name="tab_home_black" width="25" height="25"/>
     </resources>

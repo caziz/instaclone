@@ -35,7 +35,7 @@ struct UserService {
         }
     }
 
-static func show(forUID uid: String, completion: @escaping (User?) -> Void) {
+    static func show(forUID uid: String, completion: @escaping (User?) -> Void) {
        
         let ref = Database.database().reference().child("users").child(uid)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -47,18 +47,73 @@ static func show(forUID uid: String, completion: @escaping (User?) -> Void) {
     }
     
     static func posts(for user: User, completion: @escaping ([Post]) -> Void) {
-        // get post reference
+        // /posts/currentUID/snapshot
         let ref = Database.database().reference().child("posts").child(user.uid)
-        
-        // pull snapshot from reference
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
             
-            let posts = snapshot.reversed().flatMap(Post.init)
-            completion(posts)
+            let dispatchGroup = DispatchGroup()
+            
+            let posts: [Post] =
+                snapshot
+                    .reversed()
+                    .flatMap {
+                        guard let post = Post(snapshot: $0)
+                            else { return nil }
+                        
+                        dispatchGroup.enter()
+                        
+                        // set isLiked member variable
+                        LikeService.isPostLiked(post) { (isLiked) in
+                            post.isLiked = isLiked
+                            
+                            dispatchGroup.leave()
+                        }
+                        
+                        return post
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(posts)
+            })
         })
     }
-
+    
+    static func usersExcludingCurrentUser(completion: @escaping ([User]) -> Void) {
+        let currentUser = User.current
+        // Create a DatabaseReference to read all users from the database.
+        let ref = Database.database().reference().child("users")
+        
+        // Read the users node from the database.
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return completion([]) }
+            
+            // Take the snapshot and perform a few transformations. First, we convert all of the child DataSnapshot into User using our failable initializer. Next we filter out the current user object from the User array.
+            let users =
+                snapshot
+                    .flatMap(User.init)
+                    .filter { $0.uid != currentUser.uid }
+            
+            // Create a new DispatchGroup so that we can be notified when all asynchronous tasks are finished executing. We'll use the notify(queue:) method on DispatchGroup as a completion handler for when all follow data has been read
+            let dispatchGroup = DispatchGroup()
+            users.forEach { (user) in
+                dispatchGroup.enter()
+                
+                // Make a request for each individual user to determine if the user is being followed by the current user.
+                FollowService.isUserFollowed(user) { (isFollowed) in
+                    user.isFollowed = isFollowed
+                    dispatchGroup.leave()
+                }
+            }
+            
+            // Run the completion block after all follow relationship data has returned.
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(users)
+            })
+        })
+    }
+    
 }
