@@ -1,6 +1,6 @@
 //
 //  UIImage+Size.swift
-//  Makestagram
+//  Instaclone
 //
 //  Created by Christopher Aziz on 6/29/17.
 //  Copyright © 2017 Christopher Aziz. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Makestagram
+//  Instaclone
 //
 //  Created by Christopher Aziz on 6/26/17.
 //  Copyright © 2017 Christopher Aziz. All rights reserved.
@@ -21,11 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         FirebaseApp.configure()
-        
         configureInitialRootViewController(for: window)
-        
         return true
     }
 

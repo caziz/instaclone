@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  Makestagram
+//  Instaclone
 //
 //  Created by Christopher Aziz on 6/27/17.
 //  Copyright © 2017 Christopher Aziz. All rights reserved.

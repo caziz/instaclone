@@ -12,7 +12,7 @@
         <!--Find Friends View Controller-->
         <scene sceneID="Gv8-fz-ZPK">
             <objects>
-                <viewController id="fpP-hC-csT" customClass="FindFriendsViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fpP-hC-csT" customClass="FindFriendsViewController" customModule="Instaclone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CIl-ta-cWQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Wyj-TF-yhL"/>
@@ -54,7 +54,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="Csl-pM-l7H">
             <objects>
-                <tabBarController id="L4z-S1-9FK" customClass="MainTabBarController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="L4z-S1-9FK" customClass="MainTabBarController" customModule="Instaclone" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rpv-Uf-iOb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -78,7 +78,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArR-5u-FVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-315" y="-1392"/>
+            <point key="canvasLocation" x="-560" y="-1167"/>
         </scene>
     </scenes>
     <resources>
