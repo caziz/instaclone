@@ -20,38 +20,69 @@ struct FollowService {
     }
     
     private static func followUser(_ user: User, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
-        // We create a dictionary to update multiple locations at the same time. We set the appropriate key-value for our followers and following.
         let currentUID = User.current.uid
         let followData = ["followers/\(user.uid)/\(currentUID)" : true,
                           "following/\(currentUID)/\(user.uid)" : true]
         
-        // We write our new relationship to Firebase.
         let ref = Database.database().reference()
         ref.updateChildValues(followData) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
+                success(false)
             }
             
-            // We return whether the update was successful based on whether there was an error.
-            success(error == nil)
+            // First we get all posts for the user. We can reuse the service method that we previously used to display all of our posts.
+            UserService.posts(for: user) { (posts) in
+                // Next we get all of the post keys for that user's posts. This will allow us to write each post to our own timeline.
+                let postKeys = posts.flatMap { $0.key }
+                
+                // We build a multiple location update using a dictionary that adds each of the followee's post to our timeline.
+                var followData = [String : Any]()
+                let timelinePostDict = ["poster_uid" : user.uid]
+                postKeys.forEach { followData["timeline/\(currentUID)/\($0)"] = timelinePostDict }
+                
+                // We write the dictionary to our database.
+                ref.updateChildValues(followData, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                    }
+                    
+                    // We return success based on whether we received an error.
+                    success(error == nil)
+                })
+            }
         }
     }
     
     private static func unfollowUser(_ user: User, forCurrentUserWithSuccess success: @escaping (Bool) -> Void) {
-        // We create a dictionary to update multiple locations at the same time. We set the appropriate key-value for our followers and following.
         let currentUID = User.current.uid
+        // Use NSNull() object instead of nil because updateChildValues expects type [Hashable : Any]
         let followData = ["followers/\(user.uid)/\(currentUID)" : NSNull(),
                           "following/\(currentUID)/\(user.uid)" : NSNull()]
         
-        // We write our new relationship to Firebase.
         let ref = Database.database().reference()
-        ref.updateChildValues(followData) { (error, _) in
+        ref.updateChildValues(followData) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
+                return success(false)
             }
             
-            // We return whether the update was successful based on whether there was an error.
-            success(error == nil)
+            UserService.posts(for: user, completion: { (posts) in
+                var unfollowData = [String : Any]()
+                let postsKeys = posts.flatMap { $0.key }
+                postsKeys.forEach {
+                    // Use NSNull() object instead of nil because updateChildValues expects type [Hashable : Any]
+                    unfollowData["timeline/\(currentUID)/\($0)"] = NSNull()
+                }
+                
+                ref.updateChildValues(unfollowData, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        assertionFailure(error.localizedDescription)
+                    }
+                    
+                    success(error == nil)
+                })
+            })
         }
     }
     

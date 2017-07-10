@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
         return dateFormatter
     }()
 
+    let refreshControl = UIRefreshControl()
+
     
     // MARK: - Subviews
     
@@ -33,20 +35,31 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         configureTableView()
-        
-        UserService.posts(for: User.current) { (posts) in
+        reloadTimeline()
+    }
+    
+    func reloadTimeline() {
+        UserService.timeline { (posts) in
             self.posts = posts
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            
             self.tableView.reloadData()
         }
     }
-    
     // MARK: - AESTHETIC
     
     func configureTableView() {
         // remove separators for empty cells
-         tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         // remove separators from cells
          tableView.separatorStyle = .none
+        
+        // add pull to refresh
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
 
 }

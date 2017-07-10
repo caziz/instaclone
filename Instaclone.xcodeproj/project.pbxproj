@@ -264,7 +264,7 @@
 				TargetAttributes = {
 					5A941D821F016AF60045DCE4 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = EKF6C7W5C3;
+						DevelopmentTeam = M96W5MC8C2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -482,7 +482,7 @@
 			baseConfigurationReference = 2E3FF8A5F0C4B4A547E703FF /* Pods-Instaclone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EKF6C7W5C3;
+				DEVELOPMENT_TEAM = M96W5MC8C2;
 				INFOPLIST_FILE = "$(SRCROOT)/Instaclone/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.caziz.Instaclone;
@@ -496,7 +496,7 @@
 			baseConfigurationReference = D6EE3A658B1BC73FF9746E7A /* Pods-Instaclone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EKF6C7W5C3;
+				DEVELOPMENT_TEAM = M96W5MC8C2;
 				INFOPLIST_FILE = "$(SRCROOT)/Instaclone/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.caziz.Instaclone;
