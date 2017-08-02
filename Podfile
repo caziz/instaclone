@@ -7,7 +7,6 @@ target 'Instaclone' do
 
   # Pods for Instaclone
 
-
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'FirebaseUI/Auth'

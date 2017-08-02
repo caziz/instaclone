@@ -94,12 +94,10 @@ struct PostService {
                 PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
                     if let post = post {
                         posts.append(post)
-                    }
-                    
+                    } 
                     dispatchGroup.leave()
                 }
             }
-            
             dispatchGroup.notify(queue: .main, execute: {
                 completion(posts.reversed())
             })

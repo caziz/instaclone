@@ -58,7 +58,6 @@ class User : NSObject {
         guard let currentUser = _current else {
             fatalError("Error: current user doesn't exist")
         }
-        
         return currentUser
     }
     
